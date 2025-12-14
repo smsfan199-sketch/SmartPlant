@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8">
   <title>Smart Plant</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
     body {
       margin: 0;
@@ -62,6 +62,9 @@
       margin: 5px 0;
       width: 100%;
     }
+    optgroup {
+      font-weight: bold;
+    }
   </style>
 </head>
 <body>
@@ -93,7 +96,7 @@
 <section id="solution">
   <div class="card">
     <h2>The Smart Plant Solution</h2>
-    <p>Smart Plant helps by giving simple care advice based on your plant type:</p>
+    <p>Smart Plant gives simple care advice based on plant type:</p>
     <ul>
       <li>Watering reminders</li>
       <li>Light recommendations</li>
@@ -109,21 +112,39 @@
     <label for="plant">Choose your plant:</label>
     <select id="plant">
       <option value="">-- Select --</option>
-      <!-- Indoor plants -->
-      <option value="succulent">Succulent</option>
-      <option value="fern">Fern</option>
-      <option value="snake">Snake Plant</option>
-      <option value="pothos">Pothos</option>
-      <option value="spider">Spider Plant</option>
-      <option value="aloe">Aloe Vera</option>
-      <option value="peace">Peace Lily</option>
-      <option value="ficus">Ficus</option>
-      <option value="philodendron">Philodendron</option>
-      <option value="dracaena">Dracaena</option>
-      <!-- Aquatic plants -->
-      <option value="javafern">Java Fern (Aquatic)</option>
-      <option value="anubias">Anubias (Aquatic)</option>
-      <option value="hornwort">Hornwort (Aquatic)</option>
+      <option value="unknown">I’m not sure</option>
+
+      <optgroup label="Foliage Plants">
+        <option value="pothos">Pothos</option>
+        <option value="philodendron">Philodendron</option>
+        <option value="spider">Spider Plant</option>
+        <option value="ferns">Ferns</option>
+        <option value="fiddleleaf">Fiddle Leaf Fig</option>
+        <option value="rubber">Rubber Plant</option>
+        <option value="dracaena">Dracaena</option>
+        <option value="aloe">Aloe Vera</option>
+      </optgroup>
+
+      <optgroup label="Flowering Plants">
+        <option value="africanviolet">African Violet</option>
+        <option value="peace">Peace Lily</option>
+        <option value="hibiscus">Hibiscus</option>
+        <option value="anthurium">Anthurium</option>
+      </optgroup>
+
+      <optgroup label="Succulents & Cacti">
+        <option value="succulent">Succulent</option>
+        <option value="jade">Jade Plant</option>
+        <option value="echiveria">Echeveria</option>
+        <option value="cactus">Cactus</option>
+      </optgroup>
+
+      <optgroup label="Aquatic Plants">
+        <option value="javafern">Java Fern</option>
+        <option value="anubias">Anubias</option>
+        <option value="hornwort">Hornwort</option>
+      </optgroup>
+
     </select>
 
     <button onclick="checkPlant()">Get Care Tips</button>
@@ -142,47 +163,75 @@ function checkPlant() {
   const result = document.getElementById("result");
 
   switch(plant) {
-    // Indoor plants
-    case "succulent":
-      result.textContent = "Succulents need bright light and very little water. Let the soil dry completely.";
+    case "unknown":
+      result.textContent = "No problem! Here are some general tips:\n- Bright, indirect light for most indoor plants\n- Water when the top inch of soil is dry\n- Avoid cold drafts\n- Most plants enjoy occasional fertilizing";
       break;
-    case "fern":
-      result.textContent = "Ferns like indirect light and consistently moist soil. Do not let them dry out.";
-      break;
-    case "snake":
-      result.textContent = "Snake plants tolerate low light and need watering only every few weeks.";
-      break;
+
+    // Foliage Plants
     case "pothos":
-      result.textContent = "Pothos can tolerate low light but grows faster in bright, indirect light. Water when the top inch of soil is dry.";
-      break;
-    case "spider":
-      result.textContent = "Spider plants like indirect sunlight and evenly moist soil. Avoid overwatering.";
-      break;
-    case "aloe":
-      result.textContent = "Aloe Vera needs bright light and very little water. Let soil dry between waterings.";
-      break;
-    case "peace":
-      result.textContent = "Peace Lilies like low to medium light and consistently moist soil. They also benefit from misting.";
-      break;
-    case "ficus":
-      result.textContent = "Ficus plants prefer bright, indirect light and regular watering. Avoid sudden temperature changes.";
+      result.textContent = "Pothos: tolerates low light; water when top inch of soil is dry.";
       break;
     case "philodendron":
-      result.textContent = "Philodendrons thrive in medium light and like the soil to dry slightly between waterings.";
+      result.textContent = "Philodendron: medium light; let soil dry slightly between waterings.";
+      break;
+    case "spider":
+      result.textContent = "Spider Plant: indirect sunlight; keep soil evenly moist.";
+      break;
+    case "ferns":
+      result.textContent = "Ferns: indirect light; keep soil consistently moist.";
+      break;
+    case "fiddleleaf":
+      result.textContent = "Fiddle Leaf Fig: bright indirect light; water when top inch of soil is dry.";
+      break;
+    case "rubber":
+      result.textContent = "Rubber Plant: bright indirect light; water moderately, avoid waterlogging.";
       break;
     case "dracaena":
-      result.textContent = "Dracaena prefers bright, indirect light and moderate watering. Avoid waterlogging.";
+      result.textContent = "Dracaena: medium to bright indirect light; moderate watering.";
       break;
-    // Aquatic plants
+    case "aloe":
+      result.textContent = "Aloe Vera: bright light; water very little, let soil dry completely.";
+      break;
+
+    // Flowering Plants
+    case "africanviolet":
+      result.textContent = "African Violet: bright indirect light; keep soil moist but not soggy.";
+      break;
+    case "peace":
+      result.textContent = "Peace Lily: low to medium light; keep soil consistently moist.";
+      break;
+    case "hibiscus":
+      result.textContent = "Hibiscus: bright light; water when topsoil feels dry.";
+      break;
+    case "anthurium":
+      result.textContent = "Anthurium: indirect light; keep soil slightly moist, avoid overwatering.";
+      break;
+
+    // Succulents & Cacti
+    case "succulent":
+      result.textContent = "Succulents: bright light; very little water, let soil dry completely.";
+      break;
+    case "jade":
+      result.textContent = "Jade Plant: bright light; water moderately, allow soil to dry between waterings.";
+      break;
+    case "echiveria":
+      result.textContent = "Echeveria: bright light; water sparingly, let soil dry completely.";
+      break;
+    case "cactus":
+      result.textContent = "Cactus: full sunlight; water very little, especially in winter.";
+      break;
+
+    // Aquatic Plants
     case "javafern":
-      result.textContent = "Java Fern grows fully submerged or partially in water. Needs moderate light and nutrient-rich water.";
+      result.textContent = "Java Fern: fully or partially submerged; moderate light, nutrient-rich water.";
       break;
     case "anubias":
-      result.textContent = "Anubias can grow fully or partially submerged. Prefers low to medium light and slow growth.";
+      result.textContent = "Anubias: fully or partially submerged; low to medium light.";
       break;
     case "hornwort":
-      result.textContent = "Hornwort is a floating aquatic plant. Requires plenty of light and regular water changes.";
+      result.textContent = "Hornwort: floating aquatic plant; plenty of light, regular water changes.";
       break;
+
     default:
       result.textContent = "Please select a plant to get tips.";
   }
@@ -191,4 +240,6 @@ function checkPlant() {
 
 </body>
 </html>
+
+
 
