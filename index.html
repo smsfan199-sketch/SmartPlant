@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Smart Plant</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f4f9f4;
+      color: #2e3d2f;
+    }
+    header {
+      background: #4caf50;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+    nav {
+      background: #388e3c;
+      padding: 10px;
+      text-align: center;
+    }
+    nav a {
+      color: white;
+      margin: 0 10px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    section {
+      padding: 20px;
+      max-width: 900px;
+      margin: auto;
+    }
+    .card {
+      background: white;
+      padding: 15px;
+      margin: 15px 0;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    footer {
+      background: #2e7d32;
+      color: white;
+      text-align: center;
+      padding: 15px;
+    }
+    button {
+      background: #4caf50;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #43a047;
+    }
+    select {
+      padding: 8px;
+      margin: 5px 0;
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>🌱 Smart Plant</h1>
+  <p>Helping you keep your indoor and aquatic plants healthy</p>
+</header>
+
+<nav>
+  <a href="#problem">Problem</a>
+  <a href="#solution">Solution</a>
+  <a href="#checker">Plant Checker</a>
+</nav>
+
+<section id="problem">
+  <div class="card">
+    <h2>The Problem</h2>
+    <p>Many people struggle to keep plants alive because of:</p>
+    <ul>
+      <li>Overwatering or underwatering</li>
+      <li>Wrong lighting conditions</li>
+      <li>Not knowing what each plant needs</li>
+      <li>Special care for aquatic plants</li>
+    </ul>
+  </div>
+</section>
+
+<section id="solution">
+  <div class="card">
+    <h2>The Smart Plant Solution</h2>
+    <p>Smart Plant helps by giving simple care advice based on your plant type:</p>
+    <ul>
+      <li>Watering reminders</li>
+      <li>Light recommendations</li>
+      <li>Beginner-friendly tips</li>
+      <li>Aquatic plant guidance</li>
+    </ul>
+  </div>
+</section>
+
+<section id="checker">
+  <div class="card">
+    <h2>Plant Care Checker</h2>
+    <label for="plant">Choose your plant:</label>
+    <select id="plant">
+      <option value="">-- Select --</option>
+      <!-- Indoor plants -->
+      <option value="succulent">Succulent</option>
+      <option value="fern">Fern</option>
+      <option value="snake">Snake Plant</option>
+      <option value="pothos">Pothos</option>
+      <option value="spider">Spider Plant</option>
+      <option value="aloe">Aloe Vera</option>
+      <option value="peace">Peace Lily</option>
+      <option value="ficus">Ficus</option>
+      <option value="philodendron">Philodendron</option>
+      <option value="dracaena">Dracaena</option>
+      <!-- Aquatic plants -->
+      <option value="javafern">Java Fern (Aquatic)</option>
+      <option value="anubias">Anubias (Aquatic)</option>
+      <option value="hornwort">Hornwort (Aquatic)</option>
+    </select>
+
+    <button onclick="checkPlant()">Get Care Tips</button>
+
+    <p id="result"></p>
+  </div>
+</section>
+
+<footer>
+  <p>© 2025 Smart Plant | Grow happy plants 🌿</p>
+</footer>
+
+<script>
+function checkPlant() {
+  const plant = document.getElementById("plant").value;
+  const result = document.getElementById("result");
+
+  switch(plant) {
+    // Indoor plants
+    case "succulent":
+      result.textContent = "Succulents need bright light and very little water. Let the soil dry completely.";
+      break;
+    case "fern":
+      result.textContent = "Ferns like indirect light and consistently moist soil. Do not let them dry out.";
+      break;
+    case "snake":
+      result.textContent = "Snake plants tolerate low light and need watering only every few weeks.";
+      break;
+    case "pothos":
+      result.textContent = "Pothos can tolerate low light but grows faster in bright, indirect light. Water when the top inch of soil is dry.";
+      break;
+    case "spider":
+      result.textContent = "Spider plants like indirect sunlight and evenly moist soil. Avoid overwatering.";
+      break;
+    case "aloe":
+      result.textContent = "Aloe Vera needs bright light and very little water. Let soil dry between waterings.";
+      break;
+    case "peace":
+      result.textContent = "Peace Lilies like low to medium light and consistently moist soil. They also benefit from misting.";
+      break;
+    case "ficus":
+      result.textContent = "Ficus plants prefer bright, indirect light and regular watering. Avoid sudden temperature changes.";
+      break;
+    case "philodendron":
+      result.textContent = "Philodendrons thrive in medium light and like the soil to dry slightly between waterings.";
+      break;
+    case "dracaena":
+      result.textContent = "Dracaena prefers bright, indirect light and moderate watering. Avoid waterlogging.";
+      break;
+    // Aquatic plants
+    case "javafern":
+      result.textContent = "Java Fern grows fully submerged or partially in water. Needs moderate light and nutrient-rich water.";
+      break;
+    case "anubias":
+      result.textContent = "Anubias can grow fully or partially submerged. Prefers low to medium light and slow growth.";
+      break;
+    case "hornwort":
+      result.textContent = "Hornwort is a floating aquatic plant. Requires plenty of light and regular water changes.";
+      break;
+    default:
+      result.textContent = "Please select a plant to get tips.";
+  }
+}
+</script>
+
+</body>
+</html>
+
