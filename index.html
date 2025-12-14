@@ -2,68 +2,89 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Smart Plant</title>
+  <title>Smart Plant - Presentation Version</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
     body {
       margin: 0;
       font-family: Arial, Helvetica, sans-serif;
-      background: #f4f9f4;
+      background: #f0f8f0;
       color: #2e3d2f;
     }
     header {
       background: #4caf50;
       color: white;
-      padding: 20px;
+      padding: 25px;
       text-align: center;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2.5em;
     }
     nav {
       background: #388e3c;
-      padding: 10px;
+      padding: 12px;
       text-align: center;
     }
     nav a {
       color: white;
-      margin: 0 10px;
+      margin: 0 12px;
       text-decoration: none;
       font-weight: bold;
     }
     section {
-      padding: 20px;
-      max-width: 900px;
+      padding: 25px;
+      max-width: 1000px;
       margin: auto;
     }
     .card {
       background: white;
-      padding: 15px;
-      margin: 15px 0;
-      border-radius: 8px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      padding: 20px;
+      margin: 20px 0;
+      border-radius: 10px;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.15);
     }
     footer {
       background: #2e7d32;
       color: white;
       text-align: center;
-      padding: 15px;
+      padding: 20px;
     }
     button {
       background: #4caf50;
       color: white;
       border: none;
-      padding: 10px 15px;
-      border-radius: 5px;
+      padding: 12px 20px;
+      border-radius: 6px;
       cursor: pointer;
+      font-size: 1em;
     }
     button:hover {
       background: #43a047;
     }
     select {
-      padding: 8px;
-      margin: 5px 0;
+      padding: 10px;
+      margin: 8px 0;
       width: 100%;
+      font-size: 1em;
     }
-    optgroup {
-      font-weight: bold;
+    .category-images {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      margin-top: 15px;
+    }
+    .category-images div {
+      flex: 1 1 200px;
+      text-align: center;
+    }
+    .category-images img {
+      max-width: 100%;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    h2 {
+      color: #2e3d2f;
     }
   </style>
 </head>
@@ -77,18 +98,18 @@
 <nav>
   <a href="#problem">Problem</a>
   <a href="#solution">Solution</a>
+  <a href="#why">Why Smart Plant?</a>
   <a href="#checker">Plant Checker</a>
 </nav>
 
 <section id="problem">
   <div class="card">
     <h2>The Problem</h2>
-    <p>Many people struggle to keep plants alive because of:</p>
     <ul>
+      <li>Many people struggle to keep indoor plants alive</li>
       <li>Overwatering or underwatering</li>
       <li>Wrong lighting conditions</li>
-      <li>Not knowing what each plant needs</li>
-      <li>Special care for aquatic plants</li>
+      <li>Unfamiliar plant types</li>
     </ul>
   </div>
 </section>
@@ -96,13 +117,38 @@
 <section id="solution">
   <div class="card">
     <h2>The Smart Plant Solution</h2>
-    <p>Smart Plant gives simple care advice based on plant type:</p>
+    <p>Smart Plant provides:</p>
     <ul>
-      <li>Watering reminders</li>
-      <li>Light recommendations</li>
-      <li>Beginner-friendly tips</li>
-      <li>Aquatic plant guidance</li>
+      <li>Easy-to-understand care tips for common plants</li>
+      <li>Interactive plant selection</li>
+      <li>Guidance for both indoor and aquatic plants</li>
+      <li>Beginner-friendly advice to reduce plant deaths</li>
     </ul>
+  </div>
+</section>
+
+<section id="why">
+  <div class="card">
+    <h2>Why Smart Plant?</h2>
+    <div class="category-images">
+      <div>
+        <img src="https://i.imgur.com/EzF3eFz.jpg" alt="Foliage Plants">
+        <p>Foliage Plants</p>
+      </div>
+      <div>
+        <img src="https://i.imgur.com/3UqfNfD.jpg" alt="Flowering Plants">
+        <p>Flowering Plants</p>
+      </div>
+      <div>
+        <img src="https://i.imgur.com/Xq1dSkd.jpg" alt="Succulents & Cacti">
+        <p>Succulents & Cacti</p>
+      </div>
+      <div>
+        <img src="https://i.imgur.com/yb3BqU6.jpg" alt="Aquatic Plants">
+        <p>Aquatic Plants</p>
+      </div>
+    </div>
+    <p>Smart Plant saves time, reduces plant deaths, and makes plant care easy for everyone!</p>
   </div>
 </section>
 
@@ -113,7 +159,6 @@
     <select id="plant">
       <option value="">-- Select --</option>
       <option value="unknown">I’m not sure</option>
-
       <optgroup label="Foliage Plants">
         <option value="pothos">Pothos</option>
         <option value="philodendron">Philodendron</option>
@@ -124,31 +169,26 @@
         <option value="dracaena">Dracaena</option>
         <option value="aloe">Aloe Vera</option>
       </optgroup>
-
       <optgroup label="Flowering Plants">
         <option value="africanviolet">African Violet</option>
         <option value="peace">Peace Lily</option>
         <option value="hibiscus">Hibiscus</option>
         <option value="anthurium">Anthurium</option>
       </optgroup>
-
       <optgroup label="Succulents & Cacti">
         <option value="succulent">Succulent</option>
         <option value="jade">Jade Plant</option>
         <option value="echiveria">Echeveria</option>
         <option value="cactus">Cactus</option>
       </optgroup>
-
       <optgroup label="Aquatic Plants">
         <option value="javafern">Java Fern</option>
         <option value="anubias">Anubias</option>
         <option value="hornwort">Hornwort</option>
       </optgroup>
-
     </select>
 
     <button onclick="checkPlant()">Get Care Tips</button>
-
     <p id="result"></p>
   </div>
 </section>
@@ -164,74 +204,31 @@ function checkPlant() {
 
   switch(plant) {
     case "unknown":
-      result.textContent = "No problem! Here are some general tips:\n- Bright, indirect light for most indoor plants\n- Water when the top inch of soil is dry\n- Avoid cold drafts\n- Most plants enjoy occasional fertilizing";
+      result.textContent = "General tips:\n- Bright, indirect light for most indoor plants\n- Water when top inch of soil is dry\n- Avoid cold drafts\n- Occasional fertilizing";
       break;
-
-    // Foliage Plants
-    case "pothos":
-      result.textContent = "Pothos: tolerates low light; water when top inch of soil is dry.";
-      break;
-    case "philodendron":
-      result.textContent = "Philodendron: medium light; let soil dry slightly between waterings.";
-      break;
-    case "spider":
-      result.textContent = "Spider Plant: indirect sunlight; keep soil evenly moist.";
-      break;
-    case "ferns":
-      result.textContent = "Ferns: indirect light; keep soil consistently moist.";
-      break;
-    case "fiddleleaf":
-      result.textContent = "Fiddle Leaf Fig: bright indirect light; water when top inch of soil is dry.";
-      break;
-    case "rubber":
-      result.textContent = "Rubber Plant: bright indirect light; water moderately, avoid waterlogging.";
-      break;
-    case "dracaena":
-      result.textContent = "Dracaena: medium to bright indirect light; moderate watering.";
-      break;
-    case "aloe":
-      result.textContent = "Aloe Vera: bright light; water very little, let soil dry completely.";
-      break;
-
-    // Flowering Plants
-    case "africanviolet":
-      result.textContent = "African Violet: bright indirect light; keep soil moist but not soggy.";
-      break;
-    case "peace":
-      result.textContent = "Peace Lily: low to medium light; keep soil consistently moist.";
-      break;
-    case "hibiscus":
-      result.textContent = "Hibiscus: bright light; water when topsoil feels dry.";
-      break;
-    case "anthurium":
-      result.textContent = "Anthurium: indirect light; keep soil slightly moist, avoid overwatering.";
-      break;
-
+    // Foliage
+    case "pothos": result.textContent = "Pothos: low to medium light, water when top soil is dry."; break;
+    case "philodendron": result.textContent = "Philodendron: medium light, soil slightly dry between watering."; break;
+    case "spider": result.textContent = "Spider Plant: indirect sunlight, soil evenly moist."; break;
+    case "ferns": result.textContent = "Ferns: indirect light, soil consistently moist."; break;
+    case "fiddleleaf": result.textContent = "Fiddle Leaf Fig: bright indirect light, water when top soil is dry."; break;
+    case "rubber": result.textContent = "Rubber Plant: bright indirect light, water moderately."; break;
+    case "dracaena": result.textContent = "Dracaena: medium to bright indirect light, moderate watering."; break;
+    case "aloe": result.textContent = "Aloe Vera: bright light, very little water."; break;
+    // Flowering
+    case "africanviolet": result.textContent = "African Violet: bright indirect light, soil moist but not soggy."; break;
+    case "peace": result.textContent = "Peace Lily: low to medium light, keep soil moist."; break;
+    case "hibiscus": result.textContent = "Hibiscus: bright light, water when topsoil is dry."; break;
+    case "anthurium": result.textContent = "Anthurium: indirect light, soil slightly moist."; break;
     // Succulents & Cacti
-    case "succulent":
-      result.textContent = "Succulents: bright light; very little water, let soil dry completely.";
-      break;
-    case "jade":
-      result.textContent = "Jade Plant: bright light; water moderately, allow soil to dry between waterings.";
-      break;
-    case "echiveria":
-      result.textContent = "Echeveria: bright light; water sparingly, let soil dry completely.";
-      break;
-    case "cactus":
-      result.textContent = "Cactus: full sunlight; water very little, especially in winter.";
-      break;
-
-    // Aquatic Plants
-    case "javafern":
-      result.textContent = "Java Fern: fully or partially submerged; moderate light, nutrient-rich water.";
-      break;
-    case "anubias":
-      result.textContent = "Anubias: fully or partially submerged; low to medium light.";
-      break;
-    case "hornwort":
-      result.textContent = "Hornwort: floating aquatic plant; plenty of light, regular water changes.";
-      break;
-
+    case "succulent": result.textContent = "Succulents: bright light, very little water."; break;
+    case "jade": result.textContent = "Jade Plant: bright light, water moderately."; break;
+    case "echiveria": result.textContent = "Echeveria: bright light, water sparingly."; break;
+    case "cactus": result.textContent = "Cactus: full sunlight, very little water."; break;
+    // Aquatic
+    case "javafern": result.textContent = "Java Fern: fully/partially submerged, moderate light."; break;
+    case "anubias": result.textContent = "Anubias: fully/partially submerged, low to medium light."; break;
+    case "hornwort": result.textContent = "Hornwort: floating, plenty of light, regular water changes."; break;
     default:
       result.textContent = "Please select a plant to get tips.";
   }
@@ -240,6 +237,3 @@ function checkPlant() {
 
 </body>
 </html>
-
-
-
